@@ -6,10 +6,13 @@ def calculate_tax(income):
         return 0
     elif income == 1210000:
         tax= 10000
+        return tax
     elif income == 1225000:
         tax= 25000
+        return tax
     elif income == 1250000:
-        tax= 50000    
+        tax= 50000   
+        return tax
     else:
        
         if income > 2400000:
