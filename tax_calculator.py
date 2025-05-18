@@ -36,3 +36,9 @@ def calculate_tax(income):
         tax += tax * 0.04
 
         return tax
+
+user_income = float(input("Enter your annual income in ₹: "))
+
+tax_amount = calculate_tax(user_income)
+
+print(f"\nYour total tax on ₹{user_income:,.2f} is ₹{tax_amount:,.2f}")
