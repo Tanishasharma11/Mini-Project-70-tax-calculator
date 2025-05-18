@@ -4,11 +4,11 @@ def calculate_tax(income):
     if income <= 1200000:
         
         return 0
-    elif income=1210000:
+    elif income == 1210000:
         tax= 10000
-    elif income=1225000:
+    elif income == 1225000:
         tax= 25000
-    elif income=1250000:
+    elif income == 1250000:
         tax= 50000    
     else:
        
