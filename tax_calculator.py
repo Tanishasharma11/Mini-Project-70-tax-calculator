@@ -1,37 +1,38 @@
-def calculate(amount, percent):
-    return (amount * percent) / 100
+def calculate_tax(income):
+    tax = 0
 
-def calculate_income_tax(total_income: 
-                         float) -> float:
-
-    if total_income <= 1200000:
+    if income <= 1200000:
+        
         return 0
-    elif total_income <= 400000:
-        return calculate(total_income - 
-                         400000, 0)
-    elif total_income <= 800000:
-        return calculate(total_income - 
-                         400000, 5) 
-    elif total_income <= 1200000:
-        return calculate(total_income - 
-                         800000, 10)
-    elif total_income <= 1600000:
-        return calculate(total_income - 
-                         1200000, 15) 
-    elif total_income <= 2000000:
-        return calculate(total_income - 
-                         1600000, 20)
-    elif total_income <= 2400000:
-        return calculate(total_income - 
-                         2000000, 25)      
+
     else:
-        return calculate(total_income - 
-                         2400000, 30)
+       
 
+        if income > 2400000:
+            tax += (income - 2400000) * 0.30
+            income = 2400000
 
-if __name__ == '__main__':
-    total_income = float(input("What's your \
-                    annual income?\n>>> "))
-    tax = calculate_income_tax(total_income)
-    print(f"Total tax applicable at \
-                    ₹{total_income} is ₹{tax}")
+        if income > 2000000:
+            tax += (income - 2000000) * 0.25
+            income = 2000000
+
+        if income > 1600000:
+            tax += (income - 1600000) * 0.20
+            income = 1600000
+
+        if income > 1200000:
+            tax += (income - 1200000) * 0.15
+            income = 1200000
+
+        if income > 800000:
+            tax += (income - 800000) * 0.10
+            income = 800000
+
+        if income > 400000:
+            tax += (income - 400000) * 0.05
+            income = 400000
+
+        # ✅ Add 4% Health & Education Cess
+        tax += tax * 0.04
+
+        return tax
