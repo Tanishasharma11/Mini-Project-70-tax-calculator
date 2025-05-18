@@ -4,10 +4,14 @@ def calculate_tax(income):
     if income <= 1200000:
         
         return 0
-
+    elif income=1210000:
+        tax= 10000
+    elif income=1225000:
+        tax= 25000
+    elif income=1250000:
+        tax= 50000    
     else:
        
-
         if income > 2400000:
             tax += (income - 2400000) * 0.30
             income = 2400000
@@ -32,7 +36,7 @@ def calculate_tax(income):
             tax += (income - 400000) * 0.05
             income = 400000
 
-        # ✅ Add 4% Health & Education Cess
+        Cess
         tax += tax * 0.04
 
         return tax
